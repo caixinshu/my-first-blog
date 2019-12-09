@@ -8,7 +8,7 @@ class QuotesSpider(scrapy.Spider):
     start_urls = ['http://quotes.toscrape.com/']
 
     def parse(self, response):
-        quotes = response.css('.quote')
+        quotes = response.css('div.quote')
         for quote in quotes:
             item = QuoteItem()
             text = quote.css('.text::text').extract_first()
