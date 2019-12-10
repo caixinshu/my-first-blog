@@ -45,10 +45,13 @@ class MysqlPipeline(object):
         # keys = item.keys()
         # values = list(item.values())
         keys,values = zip(*item.items())
-        sql = 'insert into quotes ({}) values ({})'.format(
-            ','.join(keys),','.join(['%s'] * len(values))
+        sql = 'insert into quotes ({}) values ({}) ' \
+              'on duplicate key update {}'.format(
+            ','.join(keys),
+            ','.join(['%s'] * len(values)),
+            ','.join(['`{}`=%s'.format(k) for k in keys])
         )
-        self.cur.execute(sql,values)
+        self.cur.execute(sql,*2)
         self.conn.commit()
         print(self.cur._last_executed)
         return item
