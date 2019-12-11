@@ -15,11 +15,11 @@ if __name__ == '__main__':
     keyword = 'iphone'
     if len(sys.argv)>1:
         keyword = sys.argv[1]
-    option = Options()
-    option.add_argument('--headless')
-    driver = webdriver.Chrome(chrome_options=option)
+    # option = Options()
+    # option.add_argument('--headless')
+    # driver = webdriver.Chrome(chrome_options=option)
 
-    # driver = webdriver.Chrome()
+    driver = webdriver.Chrome()
     driver.get('https://www.jd.com')
     driver.save_screenshot('1.jpg')
 
