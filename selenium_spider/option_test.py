@@ -21,6 +21,15 @@ from selenium.webdriver.chrome.options import Options
 # #关闭chreomedriver进程
 
 
-print(4438/25278)
-print((4438-334)/(25278-1055))
+# 反爬手段
+'''
+1.useragent识别
+修改头信息里的useragent
+2. 修改头信息
+构造头信息
+3.异步加载
+分析网络请求，找到对应请求
+4.参数加密
+分析前端的代码构造。或者使用selenium和splash
 
+'''
