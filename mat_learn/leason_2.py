@@ -20,5 +20,6 @@ plt.xticks(x,_xtick_labels)
 
 plt.grid(alpha=1) # 绘制网格
 
+
 plt.show() # 展示
 
